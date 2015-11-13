@@ -107,7 +107,7 @@ var server = app.listen (port, host, fonction ()
   console.log ("écoute sur" + host + ", server_port" + port)
 });
 
-
+/*
 var server = app.listen(8085, function ()
 {
   // var host = server.address().address
@@ -116,7 +116,7 @@ var server = app.listen(8085, function ()
    var host =  process.env.OPENSHIFT_NODEJS_IP
    var port =   process.env.OPENSHIFT_NODEJS_PORT
     console.log("App listening at http://%s:%s", host, port)
-})
+})*/
 
 
 
