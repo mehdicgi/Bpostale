@@ -2,7 +2,8 @@
   "name": "untitled",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
+  "scripts": 
+  {
     "start": "node ./public/javascripts/webservices.js"
   },
   "dependencies": {
