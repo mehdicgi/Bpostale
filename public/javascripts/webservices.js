@@ -98,14 +98,15 @@ app.get('/api/acores/siteAcore/horaires/:codeAcore/:id', function (req, res) {
 // CG : 10-11-2014 Lancement serveur Node en ecoute sur Port: 8082
 //**************************************************************************
 
-
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080 
-var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-
-var server = app.listen (port, host, fonction () 
+var server = app.listen(8080, function ()
 {
-  console.log ("écoute sur" + host + ", server_port" + port)
-});
+  // var host = server.address().address
+    //var port = server.address().port
+ //  // var port = server.address().port
+   var host =  process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+   var port =   process.env.OPENSHIFT_NODEJS_PORT || 8080
+    console.log("App listening at http://%s:%s", host, port)
+})
 /*
 var server = app.listen(8085, function ()
 {
