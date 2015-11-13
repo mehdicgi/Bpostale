@@ -13,10 +13,9 @@ var http = require('http');
  */
 // OPENSHIFT PORT 
 
-//var port = normalizePort(process.env.PORT || '3000');
-//app.set('port', port);
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8085);
-app.set('host', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
 /**
  * Create HTTP server.
  */
