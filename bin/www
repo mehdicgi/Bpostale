@@ -11,10 +11,12 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
+// OPENSHIFT PORT 
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
+//var port = normalizePort(process.env.PORT || '3000');
+//app.set('port', port);
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8085);
+app.set('host', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
 /**
  * Create HTTP server.
  */
@@ -81,7 +83,8 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
+function onListening() 
+{
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
